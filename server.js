@@ -11,6 +11,7 @@ app.use(cors());
 // my sql database created
 
 var mysql = require('mysql');
+const { notDeepEqual } = require("assert");
 var db = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -487,3 +488,4 @@ app.get('/Api/Marks/get/:ID',function(req,res){
         res.status(400).send(error);
     }
 });
+
